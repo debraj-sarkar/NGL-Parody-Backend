@@ -20,6 +20,10 @@ app.use(
 app.use("/api", userRoutes);
 app.use("/api", messageRoutes);
 
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({ message: "Server is alive" });
+});
+
 const PORT = process.env.PORT;
 
 const startServer = async () => {
